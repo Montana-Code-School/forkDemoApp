@@ -14,7 +14,7 @@
   margin-left: auto;
   margin-right: auto;
   display: block;
-  padding: -2px;
+  padding-top: 100px;
 }
 
 .modal-title {
@@ -36,14 +36,7 @@
     align-content: center;
 }
 
-.lowerButtons {
-  display: flex;
-  justify-content: center;
-  align-self: baseline;
-  /* margin: -10px; */
-  padding: -10px;
-  opacity: .5;
-}
+
 p2{
   align-items: center;
 }
@@ -124,7 +117,8 @@ h#title {
 .alert {
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-end;
 }
  
 .headerMenu {
@@ -133,7 +127,7 @@ h#title {
   right: 0;
   padding: 2px;
   background-blend-mode: luminosity 1;
-  opacity: .6;
+  opacity: .35;
   flex-direction: column;
 }
 
@@ -141,5 +135,26 @@ h#title {
   display: flex;
   flex-direction: column;
   align-items: center;
-  opacity: .6;
+  opacity: .5;
+}
+
+.dropdownItem {
+  display: flex;
+  position: absolute;
+  right: 0;
+  padding: 2px;
+  background-blend-mode: luminosity 1;
+  opacity: .99;
+  flex-direction: column;
+}
+
+.dropdown-menu.show {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.dropdown-menu.show:hover {
+  /* display: flex;
+  flex-direction: column-reverse; */
+  cursor: help;
+  opacity: .9999;
 }
