@@ -4,8 +4,6 @@ import './App.css';
 import Menubuttons from '../menuButton/menuButtons.js';
 import RecipeInputModal from '../recipeInputModal/recipeInputModal.js';
 import Spinner from '../spinThing.js';
-import Contact from '../Us/contact.js';
-import About from '../Us/aboutUs.js'
 import RecipeListModal from '../recipeListModal/recipeListModal';
 import Profile from '../profile.js';
 import { render } from 'react-dom'
@@ -25,11 +23,11 @@ export default class App extends Component {
   }
 
 
-loggedIn() {
-  this.setState ({
-    isLoggedIn: true
-  })
-}
+  loggedIn() {
+    this.setState({
+      isLoggedIn: true
+    })
+  }
 
   render() {
     // if (this.state.isLoggedIn) {
@@ -37,47 +35,44 @@ loggedIn() {
     // }
     return (
       <div className="App">
-      <div className="headerMenu">
-      <div className="Menubuttons">
-          < Menubuttons isLoggedIn={this.state.isLoggedIn} loggedIn={this.loggedIn} />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-        </div>
-
-      </div>
-        <img src={logo} className="fork_logo" alt="logo" usemap="#image-map"/>
-          <map name="image-map">
-            <area shape="rect" coords="50,75,190,200," href="localhost:3000/search.html"  alt="" />
-            <area shape="rect" coords="205,75,340,200" href="localhost:3000/make.html" alt="" />
-            <area shape="rect" coords="355,75,500,200" href="localhost:3000/share.html" alt="" />
-          </map>
-        {/* <div>
-                {Profile}
-        </div> */}
-        <br />
-        {/* < Spinner className="Spin" /> */}
-        <div className="lowerButtons">
-        <br />
-          < Contact />
-           < About />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          </div>
-          <br />
-          <div >
+        <div className="headerMenu">
+          <div className="Menubuttons">
+            < Menubuttons className="navigationButton" isLoggedIn={this.state.isLoggedIn} loggedIn={this.loggedIn} />
             <br />
-              <ul>
-                <p2 class="copyright"> © Fork | 2018 All rights are given for free. You're Welcome.</p2>
-              <br />
-              </ul>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
           </div>
+
+        </div>
+        <img src={logo} className="fork_logo" alt="logo" usemap="#image-map" />
+        <map name="image-map">
+          <area shape="rect" coords="50,75,190,200," href="localhost:3000/search.html" alt="" />
+          <area shape="rect" coords="205,75,340,200" href="localhost:3000/make.html" alt="" />
+          <area shape="rect" coords="355,75,500,200" href="localhost:3000/share.html" alt="" />
+        </map>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div >
+          <br />
+          <ul>
+            <p2 class="copyright"> © Fork | 2018 All rights are given for free. You're Welcome.</p2>
+            <br />
+          </ul>
+        </div>
       </div>
     )
   }
