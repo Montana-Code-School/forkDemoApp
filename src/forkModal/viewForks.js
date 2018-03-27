@@ -50,7 +50,7 @@ export default class ViewForks extends React.Component {
                                     </ol>
                                 </Col>
                             </FormGroup>
-                            <EditButton onClick={this.props.onEditClick} recipeToEdit={this.state.recipeToEdit[i]} />
+                            <EditButton onEditClick={this.props.onEditClick} recipeToEdit={this.state.recipeToEdit[i]} />
                         </Jumbotron>
                     </div>
                 )

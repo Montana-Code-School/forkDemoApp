@@ -9,7 +9,7 @@ export default class EditButton extends Component {
     render(){
         return(
             <div>
-                <Button>Edit</Button>
+                <Button onClick={this.props.onEditClick(this.props.recipeToEdit)}>Edit</Button>
             </div>
         )
     }
