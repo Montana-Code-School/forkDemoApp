@@ -8,8 +8,7 @@ import RecipeListModal from '../recipeListModal/recipeListModal';
 import Profile from '../profile.js';
 import { render } from 'react-dom'
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-// import ImageMapper from 'react-image-mapper';
-// import LineChart from 'react-linechart';
+
 
 
 

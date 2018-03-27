@@ -25,7 +25,6 @@
   image-rendering:  '../forkcircle.png'
 }
 .modal-content {
-  /* background-image:  url("../marble.jpeg"); */
   background-color: whitesmoke;
   opacity: .85;
   background-size: 180%;
@@ -153,8 +152,6 @@ h#title {
   flex-direction: column-reverse;
 }
 .dropdown-menu.show:hover {
-  /* display: flex;
-  flex-direction: column-reverse; */
   cursor: help;
   opacity: .9999;
 }
