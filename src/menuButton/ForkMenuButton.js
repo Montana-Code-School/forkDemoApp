@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'reactstrap';
+import { Button, ButtonDropdown, DropdownItem } from 'reactstrap';
 
 export default class ForkMenuButton extends React.Component {
 
@@ -14,7 +14,7 @@ export default class ForkMenuButton extends React.Component {
 
     render(){
         return (
-            <Button onClick={this.openModal}>{this.props.buttonLabel}</Button>
+            <DropdownItem onClick={this.openModal}>{this.props.buttonLabel}</DropdownItem>
         )
     }
 }

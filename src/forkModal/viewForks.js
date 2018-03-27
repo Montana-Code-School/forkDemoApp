@@ -5,8 +5,8 @@ import { Jumbotron, FormGroup, Col, Button } from 'reactstrap';
 import EditButton from './editButton'
 
 export default class ViewForks extends React.Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             recipeToEdit: [],
         }
@@ -14,7 +14,6 @@ export default class ViewForks extends React.Component {
 
     renderRecipes() {
         if (this.props.myForks == undefined) {
-            debugger;
             return ("You better start forking!")
         } else {
             return this.props.myForks.map((value, i) => {
@@ -50,7 +49,7 @@ export default class ViewForks extends React.Component {
                                     </ol>
                                 </Col>
                             </FormGroup>
-                            <EditButton onEditClick={this.props.onEditClick} recipeToEdit={this.state.recipeToEdit[i]} />
+                            <EditButton editRecipe={this.props.editRecipe} recipeToEdit={this.props.myForks[i]} />
                         </Jumbotron>
                     </div>
                 )

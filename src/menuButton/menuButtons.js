@@ -1,7 +1,10 @@
 import React from 'react';
 import './menuButtons.css';
+import '../App/App.css';
 import Login from './login';
 import Logout from './logout';
+import Contact from '../Us/contact.js';
+import About from '../Us/aboutUs.js'
 import CreateAcct from './createAcct';
 import Search from './search';
 import axios from 'axios';
@@ -13,6 +16,9 @@ import ForkMenuButton from "./ForkMenuButton";
 import ForkModal from '../forkModal/forkModal'
 import ModalNotification from "./modalNotification";
 import ProcessInput from '../processInput/processInput';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem , ButtonDropdown} from 'reactstrap';
+
+
 
 export default class Menubuttons extends React.Component {
   constructor(props) {
@@ -25,11 +31,14 @@ export default class Menubuttons extends React.Component {
       notificationMessage: " ",
       notificationColor: 'success',
       isNotificationOpen: false,
+      dropdownOpen: false
     };
 
     this.loginButtonLabels = [
       "Create Account",
       "Login",
+      "About Us",
+      "Contact Us"
     ]
 
     this.menuButtonLabels = [
@@ -37,7 +46,10 @@ export default class Menubuttons extends React.Component {
       "Add New Recipe",
       "View Recipe",
       "Search",
+      "About Us",
+      "Contact Us",
       "Logout"
+
     ]
 
     this.openModal = this.openModal.bind(this);
@@ -46,9 +58,9 @@ export default class Menubuttons extends React.Component {
     this.login = this.login.bind(this);
     this.setNote = this.setNote.bind(this);
     this.closeAlert = this.closeAlert.bind(this);
+    this.navMenuToggle = this.navMenuToggle.bind(this);
     this.openForkModal = this.openForkModal.bind(this);
     this.closeForkModal = this.closeForkModal.bind(this);
-
   }
 
   setNote(message, color, isOpen) {
@@ -65,6 +77,12 @@ export default class Menubuttons extends React.Component {
     })
   }
 
+  navMenuToggle() {
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen
+    });
+  }
+
   login(userName, password) {
     return new Promise((resolve, reject) => {
       axios.post('/loginData', { userName, password }).then((result) => {
@@ -77,7 +95,6 @@ export default class Menubuttons extends React.Component {
     })
   }
 
-
   mapLabelToComponent(label) {
     switch (label) {
       case "Create Account":
@@ -86,7 +103,7 @@ export default class Menubuttons extends React.Component {
         return <Login closeModal={this.closeModal} login={this.login} setNote={this.setNote} />
       case "Add New Recipe":
         return <RecipeInputModal closeModal={this.closeModal} setNote={this.setNote} />
-      case "View Recipes":
+      case "View Recipe":
         return <RecipeListModal closeModal={this.closeModal} setNote={this.setNote} openForkModal={this.openForkModal} />
       case "Search":
         return <Search closeModal={this.closeModal} setNote={this.setNote} />
@@ -94,9 +111,12 @@ export default class Menubuttons extends React.Component {
         return <ForkModal closeModal={this.closeModal} setNote={this.setNote} />
       case "Logout":
         return <Logout closeModal={this.closeModal} logout={this.logout} setNote={this.setNote} />
+      case "About Us":
+        return <About closeModal={this.closeModal} />
+      case "Contact Us":
+        return <Contact closeModal={this.closeModal} />
     }
   }
-
   closeModal() {
     this.setState({
       isModalOpen: false
@@ -108,14 +128,12 @@ export default class Menubuttons extends React.Component {
       isForkModalOpen: false
     })
   }
-
   openModal(label) {
     this.setState({
       isModalOpen: !this.state.isModalOpen,
       selectedButtonLabel: label
     })
   }
-
   openForkModal() {
     this.setState({
       isForkModalOpen: !this.state.isForkModalOpen,
@@ -153,15 +171,20 @@ export default class Menubuttons extends React.Component {
               {component}
             </ModalBody>
           </Modal>
-          <ButtonGroup>
-            {menuButtons}
-          </ButtonGroup>
+          <ButtonDropdown class="dropDownNav" direction="left" isOpen={this.state.dropdownOpen} navMenuToggle={this.navMenuToggle}>
+            <DropdownToggle onClick={this.navMenuToggle} caret size="sm" color="#dab766">
+              Start Here!
+      </DropdownToggle>
+            <DropdownMenu>
+                {menuButtons}
+            </DropdownMenu>
+          </ButtonDropdown>
         </div>
         <Modal isOpen={this.state.isForkModalOpen}>
-          <ModalHeader>{this.state.ForkModalTitle}
-            <Button className="closeButton" color="caution" onClick={this.closeForkModal}>Close</Button>
-          </ModalHeader>
-        </Modal>
+          -          <ModalHeader>{this.state.ForkModalTitle}
+            -            <Button className="closeButton" color="caution" onClick={this.closeForkModal}>Close</Button>
+            -          </ModalHeader>
+          -        </Modal>
       </div>
     );
   }

@@ -3,20 +3,27 @@ import ForkButton from '../forkButton/forkButton'
 import axios from 'axios';
 import { Jumbotron, FormGroup, Col, Button } from 'reactstrap';
 import ViewForks from './viewForks'
+import EditFork from './editFork'
+
 
 export default class ForkModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             myForks: [],
-            user: "",
-            titleToEdit: "",
-            ingredientsToEdit: [],
-            processToEdit: [],
-            renderContent: "view", 
+            renderContent: "view",
+            editFork: [],
+
         }
-        this.onEditClick = this.onEditClick.bind(this);
+        this.editRecipe = this.editRecipe.bind(this);
     }
+
+    editRecipe(recipes) {
+        this.setState({
+            editFork: recipes,
+            renderContent: "edit",
+        })
+        console.log(this.state.editFork)
 
     onEditClick(recipe) {
         this.setState({
@@ -40,10 +47,18 @@ export default class ForkModal extends React.Component {
     }
 
     render() {
+        if (this.state.renderContent  === "view") {
         return (
             <div>
-                <ViewForks myForks={this.state.myForks} onEditClick={this.onEditClick} />
+                <ViewForks editRecipe={this.editRecipe} myForks={this.state.myForks} user={this.state.user} />
             </div>
         )
+    } else {
+        return (
+            <div>
+                <EditFork editFork={this.state.editFork} />
+            </div>
+        )
+    }
     }
 }

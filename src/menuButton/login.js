@@ -2,7 +2,6 @@ import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Menubuttons from './menuButtons';
 
-
 export default class Login extends React.Component {
   constructor(props) {
     super(props);

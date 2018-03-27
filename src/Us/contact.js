@@ -20,13 +20,13 @@ class Contact extends React.Component {
   render() {
     return (
       <div>
-        <Button color="secondary" onClick={this.toggle}>{this.props.buttonLabel}Contact Us</Button>
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+        {/* <Button color="secondary" onClick={this.toggle}>{this.props.buttonLabel}Contact Us</Button> */}
+        {/* <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Contact Us</ModalHeader>
-          <ModalBody>
+          <ModalBody> */}
             We are located in the basement corner of Blunderbuss. You will find us surrounding Moby as he sleeps.
-          </ModalBody>
-        </Modal>
+          {/* </ModalBody>
+        </Modal> */}
         </div>
     );
   }
