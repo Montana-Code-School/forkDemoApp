@@ -171,7 +171,7 @@ export default class Menubuttons extends React.Component {
               {component}
             </ModalBody>
           </Modal>
-          <ButtonDropdown class="dropDownNav" direction="left" isOpen={this.state.dropdownOpen} navMenuToggle={this.navMenuToggle}>
+          <ButtonDropdown className="dropDownNav" direction="left" isOpen={this.state.dropdownOpen} navMenuToggle={this.navMenuToggle}>
             <DropdownToggle onClick={this.navMenuToggle} caret size="sm" color="#dab766">
               Start Here!
       </DropdownToggle>
