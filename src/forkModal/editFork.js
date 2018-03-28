@@ -13,7 +13,7 @@ export default class ViewForks extends React.Component {
             title: "",
 
         }
-        this.handleIngredientChange = this.handleIngredientChange.bind(this);
+        // this.handleIngredientChange = this.handleIngredientChange.bind(this);
         this.handleTitleChange = this.handleTitleChange.bind(this);
     }
 
