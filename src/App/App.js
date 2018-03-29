@@ -22,7 +22,6 @@ export default class App extends Component {
     this.loggedIn = this.loggedIn.bind(this);
   }
 
-
   loggedIn() {
     this.setState({
       isLoggedIn: true
