@@ -35,21 +35,13 @@ export default class App extends Component {
         <div className="headerMenu">
           <div className="Menubuttons">
             < Menubuttons className="navigationButton" isLoggedIn={this.state.isLoggedIn} loggedIn={this.loggedIn} />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
           </div>
-
         </div>
         <div className="CopyandLogo"> 
         <img src={logo} className="fork_logo" alt="logo" usemap="#image-map" />
           <br />
           <ul>
             <p2 className="copyright"> © Fork | 2018 All rights are given for free. You're Welcome.</p2>
-            <br />
           </ul>
         </div>
         <br />

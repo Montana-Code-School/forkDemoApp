@@ -16,7 +16,7 @@ import ForkMenuButton from "./ForkMenuButton";
 import ForkModal from '../forkModal/forkModal'
 import ModalNotification from "./modalNotification";
 import ProcessInput from '../processInput/processInput';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem , ButtonDropdown} from 'reactstrap';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, ButtonDropdown } from 'reactstrap';
 
 
 
@@ -176,15 +176,15 @@ export default class Menubuttons extends React.Component {
               Start Here!
       </DropdownToggle>
             <DropdownMenu>
-                {menuButtons}
+              {menuButtons}
             </DropdownMenu>
           </ButtonDropdown>
         </div>
         <Modal isOpen={this.state.isForkModalOpen}>
-          -          <ModalHeader>{this.state.ForkModalTitle}
-            -            <Button className="closeButton" color="caution" onClick={this.closeForkModal}>Close</Button>
-            -          </ModalHeader>
-          -        </Modal>
+          <ModalHeader>{this.state.ForkModalTitle}
+            <Button className="closeButton" color="caution" onClick={this.closeForkModal}>Close</Button>
+          </ModalHeader>
+        </Modal>
       </div>
     );
   }

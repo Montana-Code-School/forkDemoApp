@@ -1,10 +1,10 @@
 .menuButtons {
-background-color: #c6a530;
-display: flex;
-align-content: flex-start;
-justify-content: flex-start;
-}
-
+    background-color: #c6a530;
+    display: flex;
+    align-content: flex-start;
+    justify-content: flex-start;
+    }
+    
 .buttons {
     display: flex;
     justify-content: center;
@@ -12,19 +12,20 @@ justify-content: flex-start;
     position: relative;
     flex-direction: row-reverse;
 }
-
+    
 body {
     display: flex;
     justify-content: center;
 }
-
+    
 button.closeButton {
     display: flex;
     justify-content: flex-end;
 }
-
+    
 .modal-title {
     width: 100%;
     display: flex;
     justify-content: space-between;
-}
+ }
+    
