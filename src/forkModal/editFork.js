@@ -1,10 +1,10 @@
 import React from 'react';
 import ForkButton from '../forkButton/forkButton'
 import axios from 'axios';
-import { Jumbotron, FormGroup, Col, Button, Input } from 'reactstrap';
+import { Jumbotron, FormGroup, Col, Button, Input, Form, Label } from 'reactstrap';
 import EditButton from './editButton'
 import Menubuttons from '../menuButton/menuButtons.js';
- 
+
 
 export default class ViewForks extends React.Component {
     constructor(props) {
@@ -42,10 +42,11 @@ export default class ViewForks extends React.Component {
     }
 
     saveFork() {
-        axios.post('/saveFork', {title: this.state.title, ingredients: this.state.ingredients,  process: this.state.process, _id: this.state._id}).then((result) => {
+        axios.post('/saveFork', { title: this.state.title, ingredients: this.state.ingredients, process: this.state.process, _id: this.state._id }).then((result) => {
             this.setState({
-            modalNotificationMessage: result.data.message});
-            this.props.setNote(result.data.message, "success", this.state.isNotificationOpen);        
+                modalNotificationMessage: result.data.message
+            });
+            this.props.setNote(result.data.message, "success", this.state.isNotificationOpen);
             this.props.closeModal();
         })
     }
@@ -55,46 +56,41 @@ export default class ViewForks extends React.Component {
             <div>
                 <Jumbotron>
                     <h1 className="display"><input type="text" value={this.state.title} onChange={this.handleTitleChange}></input></h1>
-                    <FormGroup row>
-                        <Col>
-                            <h2 className="colHeader">Ingredients:</h2>
-                        </Col>
-                        <Col>
-                            <h2 className="colHeader">Process:</h2>
-                        </Col>
-                    </FormGroup>
-                    <FormGroup className="row2" row>
-                        <Col className="recipe">
-                            <ul className="lead">
-                                {this.props.editFork.ingredients.map((value, x) => {
-                                    return (
-                                        <li key={x}><input type="text" value={this.state.ingredients[x]} onChange={this.handleIngredientsChange.bind(this, x)}></input></li>
-                                    )
-                                })}
-                            </ul>
-                        </Col>
-                        <Col className="recipe">
-                            <ol className="lead">
-                                {this.props.editFork.process.map((value, y) => {
-                                    return (
-                                        <li key={y}><input type="text" value={this.state.process[y]} onChange={this.handleProcessChange.bind(this, y)}></input></li>
-                                    )
-                                })}
-                            </ol>
-                        </Col>
-                    </FormGroup>
-                    <Button onClick={this.saveFork}>Save</Button>
+                    <Form>
+                        <FormGroup>
+                            <Label for="ingredients">Ingredients:</Label>
+                                <ul className="lead" id="ingredients">
+                                    {this.props.editFork.ingredients.map((value, x) => {
+                                        return (
+                                            <li key={x}><input type="text" value={this.state.ingredients[x]} onChange={this.handleIngredientsChange.bind(this, x)}></input></li>
+                                        )
+                                    })}
+                                </ul>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="process">Process:</Label>
+                                <ol className="lead" id="process">
+                                    {this.props.editFork.process.map((value, y) => {
+                                        return (
+                                            <li key={y}><input type="text" value={this.state.process[y]} onChange={this.handleProcessChange.bind(this, y)}></input></li>
+                                        )
+                                    })}
+                                </ol>
+                        </FormGroup>
+                        <Button onClick={this.saveFork}>Save</Button>
+                    </Form>
                 </Jumbotron>
             </div>
-    
-    )}
 
-render(){
-    return (
-        <div>
-            {this.renderRecipes()}
-        </div>
-    )
-}
+        )
+    }
+
+    render() {
+        return (
+            <div>
+                {this.renderRecipes()}
+            </div>
+        )
+    }
 
 }
