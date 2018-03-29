@@ -46,7 +46,7 @@ export default class ViewForks extends React.Component {
             this.setState({
                 modalNotificationMessage: result.data.message
             });
-            this.props.setNote(result.data.message, "success", this.state.isNotificationOpen);
+            this.props.setNote(result.data.message, "warning", this.state.isNotificationOpen);
             this.props.closeModal();
         })
     }

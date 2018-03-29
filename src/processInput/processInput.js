@@ -65,7 +65,7 @@ export default class ProcessInput extends React.Component {
             ingredients: this.props.ingredients, 
             process: this.state.process 
         }).then((result) => {
-            this.props.setNote(result.data.message, "success", this.state.isNotificationOpen);        
+            this.props.setNote(result.data.message, "warning", this.state.isNotificationOpen);        
             this.props.closeModal();
         })
     }

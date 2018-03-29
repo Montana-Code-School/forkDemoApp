@@ -19,7 +19,7 @@ export default class ForkButton extends Component {
             process: this.props.forkedRecipe.process,
             token: token,
         }).then((result) => {
-            this.props.setNote(result.data.message, "success", true);
+            this.props.setNote(result.data.message, "warning", true);
             this.props.closeModal();
             
         })

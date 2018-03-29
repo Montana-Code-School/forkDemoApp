@@ -35,12 +35,6 @@ export default class App extends Component {
         <div className="headerMenu">
           <div className="Menubuttons">
             < Menubuttons className="navigationButton" isLoggedIn={this.state.isLoggedIn} loggedIn={this.loggedIn} />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
           </div>
 
         </div>

@@ -18,7 +18,7 @@ export default class Login extends React.Component {
 
   login() {
     this.props.login(this.state.userName, this.state.password).then((result) => {
-      this.props.setNote(result, this.state.notificationColor, this.state.isNotificationOpen);        
+      this.props.setNote(result, 'warning', this.state.isNotificationOpen);        
       this.props.closeModal();
     })
   }

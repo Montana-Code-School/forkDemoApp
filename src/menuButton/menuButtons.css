@@ -1,18 +1,26 @@
-.menuButtons {
-background-color: #c6a530;
+.Menubuttons {
+
 display: flex;
 align-content: flex-start;
 justify-content: flex-start;
 }
 
-.buttons {
+/* .buttons {
     display: flex;
     justify-content: center;
     border-radius: 3px;
     position: relative;
     flex-direction: row-reverse;
-}
+} */
 
+.buttons{
+
+    display: flex;
+    position: relative;
+    flex-direction: row-reverse;
+    height: 100vh;
+    align-self: flex-end;
+}
 body {
     display: flex;
     justify-content: center;
