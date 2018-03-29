@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Jumbotron, FormGroup, Col, Button } from 'reactstrap';
 import ViewForks from './viewForks'
 import EditFork from './editFork'
+import Menubuttons from '../menuButton/menuButtons.js';
 
 
 export default class ForkModal extends React.Component {
@@ -54,7 +55,7 @@ export default class ForkModal extends React.Component {
     } else {
         return (
             <div>
-                <EditFork editFork={this.state.editFork} />
+                <EditFork editFork={this.state.editFork} closeModal={this.props.closeModal} setNote={this.props.setNote} />
             </div>
         )
     }

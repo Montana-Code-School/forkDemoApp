@@ -3,8 +3,13 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100%;
 }
 
+#root {
+  height: 100vh;
+
+}
 
 .fork_logo {
   margin: auto;
@@ -25,7 +30,6 @@
   image-rendering:  '../forkcircle.png'
 }
 .modal-content {
-  /* background-image:  url("../marble.jpeg"); */
   background-color: whitesmoke;
   opacity: .85;
   background-size: 180%;
@@ -63,33 +67,8 @@ p {
  color: black;
 }
 
-
-
 input {
   opacity: .6;
-}
-
-.carousel-inner {
-  display: flex;
-  justify-content: center;
-  border: solid black;
-  border-width: 3px;
-  border-spacing: 0px;
-}
-.carousel-inner:hover {
-  cursor: pointer;
-}
-.CarouselCaption {
-  color: black;
-  font-size: 300px;
-  text-align: center;
-}
-
-.routes:hover {
-  color: red;
-}
-.routes:active {
-  color: red;
 }
 
 h#title {
@@ -109,25 +88,13 @@ h#title {
 
 }
 
-.carousel-item.active, .carousel-item-next, .carousel-item-prev{
-  display:flex !important;
-  justify-content: center !important;
-}
-
-.alert {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
- 
 .headerMenu {
   display: flex;
   position: absolute;
   right: 0;
-  padding: 2px;
+  padding: 8px;
   background-blend-mode: luminosity 1;
-  opacity: .35;
+  opacity: .6;
   flex-direction: column;
 }
 
@@ -135,26 +102,16 @@ h#title {
   display: flex;
   flex-direction: column;
   align-items: center;
-  opacity: .5;
-}
-
-.dropdownItem {
-  display: flex;
-  position: absolute;
-  right: 0;
-  padding: 2px;
-  background-blend-mode: luminosity 1;
-  opacity: .99;
-  flex-direction: column;
 }
 
 .dropdown-menu.show {
   display: flex;
   flex-direction: column-reverse;
+
 }
-.dropdown-menu.show:hover {
-  /* display: flex;
-  flex-direction: column-reverse; */
-  cursor: help;
-  opacity: .9999;
+
+.copyandLogo {
+display: flex;
+justify-content: space-between;
+align-items: baseline;
 }
