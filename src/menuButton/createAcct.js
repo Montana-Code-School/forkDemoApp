@@ -35,14 +35,14 @@ export default class CreateAcct extends React.Component {
             password: ''
           }
         });
-        this.props.setNote(result.data.message, "success", this.state.isNotificationOpen);        
+        this.props.setNote(result.data.message, "warning", this.state.isNotificationOpen);        
         this.props.closeModal();
         this.props.login(this.state.userName, this.state.password).then((result) => {
         })
       })
     } else {
 
-      this.props.setNote("Passwords must match", "danger", this.state.isNotificationOpen);  
+      this.props.setNote("Passwords must match", "warning", this.state.isNotificationOpen);  
       this.props.closeModal();
     }}
 

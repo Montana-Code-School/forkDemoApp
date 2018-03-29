@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+.Menubuttons {
+
+display: flex;
+align-content: flex-start;
+justify-content: flex-start;
+}
+
+/* .buttons {
+=======
 .menuButtons {
     background-color: #c6a530;
     display: flex;
@@ -6,13 +16,27 @@
     }
     
 .buttons {
+>>>>>>> f69dfd211f3aee586481885d908577f2dabfd0f0
     display: flex;
     justify-content: center;
     border-radius: 3px;
     position: relative;
     flex-direction: row-reverse;
+<<<<<<< HEAD
+} */
+
+.buttons{
+
+    display: flex;
+    position: relative;
+    flex-direction: row-reverse;
+    height: 100vh;
+    align-self: flex-end;
+}
+=======
 }
     
+>>>>>>> f69dfd211f3aee586481885d908577f2dabfd0f0
 body {
     display: flex;
     justify-content: center;

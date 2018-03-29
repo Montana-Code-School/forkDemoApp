@@ -9,9 +9,9 @@ export default class ForkMenuButton extends React.Component {
     }
 
     openModal(){
-        this.props.openModal(this.props.buttonLabel)
+        this.props.openModal(this.props.buttonLabel);
+        this.props.navMenuToggle;
     }
-
     render(){
         return (
             <DropdownItem onClick={this.openModal}>{this.props.buttonLabel}</DropdownItem>

@@ -29,7 +29,7 @@ export default class Menubuttons extends React.Component {
       test: "test",
       selectedButtonLabel: " ",
       notificationMessage: " ",
-      notificationColor: 'success',
+      notificationColor: 'warning',
       isNotificationOpen: false,
       dropdownOpen: false
     };
@@ -69,6 +69,11 @@ export default class Menubuttons extends React.Component {
       notificationColor: color,
       isNotificationOpen: isOpen,
     })
+    setTimeout(() => {
+       this.setState({
+         isNotificationOpen: false
+       })
+    }, 3000);
   }
 
   closeAlert() {
@@ -148,7 +153,7 @@ export default class Menubuttons extends React.Component {
     if (this.props.isLoggedIn) {
       var menuButtons = this.menuButtonLabels.map((l) => {
         return (
-          <ForkMenuButton buttonLabel={l} openModal={this.openModal} />
+          <ForkMenuButton buttonLabel={l} openModal={this.openModal} navMenuToggle={this.navMenuToggle} />
         )
       })
     } else {
@@ -175,8 +180,8 @@ export default class Menubuttons extends React.Component {
             <DropdownToggle onClick={this.navMenuToggle} caret size="sm" color="#dab766">
               Start Here!
       </DropdownToggle>
-            <DropdownMenu>
-              {menuButtons}
+            <DropdownMenu >
+                {menuButtons}
             </DropdownMenu>
           </ButtonDropdown>
         </div>

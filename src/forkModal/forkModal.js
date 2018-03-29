@@ -14,7 +14,6 @@ export default class ForkModal extends React.Component {
             myForks: [],
             renderContent: "view",
             editFork: [],
-
         }
         this.editRecipe = this.editRecipe.bind(this);
     }
@@ -24,8 +23,16 @@ export default class ForkModal extends React.Component {
             editFork: recipes,
             renderContent: "edit",
         })
-        console.log(this.state.editFork)
+    }
 
+    onEditClick(recipe) {
+        this.setState({
+            user: recipe.author,
+            titleToEdit: recipe.title,
+            ingredientsToEdit: recipe.ingredients,
+            processToEdit: recipe.proccess,
+            renderContent: "edit"
+        })
     }
 
     componentDidMount() {

@@ -24,7 +24,7 @@ export default class Search extends React.Component {
     search() {
         axios.post('/searchRecipe', { ingredients: this.state.query }).then((result) => {
             if (result.data.message) {
-                this.props.setNote("No recipe found", "success", this.state.isNotificationOpen);
+                this.props.setNote("No recipe found", "warning", this.state.isNotificationOpen);
                 this.props.closeModal();
             } else {
                 this.setState ({
